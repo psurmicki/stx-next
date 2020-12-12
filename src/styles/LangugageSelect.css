@@ -1,0 +1,11 @@
+.Select {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.css-yk16xz-control {
+  border-radius: 6px;
+}

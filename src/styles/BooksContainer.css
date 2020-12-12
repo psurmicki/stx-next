@@ -1,0 +1,37 @@
+.BookContainer-Container {
+
+  /* width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%; */
+  /* margin-left: -50vw;
+  margin-right: -50vw; */
+  /* display: flex; 
+  flex-flow: row wrap; */
+  /* position: fixed; */
+  /* 
+  justify-content: space-around;
+  height: 30vh;
+  width: 50vw; */
+}
+
+.BookContainer-Row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.BookContainer-Column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.Pagination-Buttons {
+  display: flex;
+  justify-content: space-around;
+  box-sizing: border-box;
+  margin: 5px;
+}

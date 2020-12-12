@@ -1,0 +1,50 @@
+.BookForm-Container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: stretch;
+  box-sizing: border-box;
+  background-color: rgba(255,255,255,0.2);
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  padding: 25px;
+}
+
+.BookForm-Header {
+  justify-content: center;
+  color: rgb(255, 255, 255);
+}
+
+.BookForm-Footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  padding: .75rem;
+  border-top: 1px solid #dee2e6;
+  border-bottom-right-radius: calc(.3rem - 1px);
+  border-bottom-left-radius: calc(.3rem - 1px);
+}
+
+input {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid white;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+label {
+  line-height: 2;
+  text-align: left;
+  margin-top: 20px;
+  color: white;
+  font-size: 14px;
+  font-weight: 200;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

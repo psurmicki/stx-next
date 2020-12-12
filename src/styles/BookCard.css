@@ -1,0 +1,51 @@
+.BookCard-Container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.BookCard-Body {
+  flex: 1;
+  box-sizing: border-box;
+  background-color: rgba(255,255,255,0.2);
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+}
+/* 
+.BookCardImage-Container {
+  flex: 1;
+} */
+
+.BookCard-Image {
+  flex: 1
+
+}
+
+.BookCard-Content {
+  
+}
+
+.BookCard-Title {
+
+}
+
+
+
+  /* flex-grow: 1;
+  padding: 5px;
+  margin-top: 10px;
+  width: 20vw;
+  height:20vh; */
+
+  /* 
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: stretch;
+
+  padding: 10px; */
+
+    /* max-width: 100%;
+  min-height: 100%; */
+  /* width: auto;
+  height: auto;
+  object-fit: cover; */
+  /* object-position: 50% 50%; */
