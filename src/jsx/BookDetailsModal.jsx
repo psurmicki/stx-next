@@ -16,7 +16,6 @@ const BookDetailsModal = ({ modalIsOpen, setModalIsOpen, book }) => {
   const toggle = () => setModalIsOpen((prevValue) => !prevValue);
 
   const closeBtn = <button className="close" onClick={toggle}>&times;</button>;
-  console.log({ book })
   return (
     <div>
       <Modal

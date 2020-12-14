@@ -36,7 +36,7 @@ const BookCard = ({ book, index, id }) => {
         <Draggable
           draggableId={`${book.id}-${id}`}
           index={index}
-          isDragDisabled={handleDragDisable()}
+          isDragDisabled={`${handleDragDisable()}`}
         >
           {(provided/* , snapshot */) => (
             <div

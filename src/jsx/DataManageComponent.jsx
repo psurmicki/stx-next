@@ -43,7 +43,6 @@ const DataManageComponent = () => {
   };
 
   const handelPathIndex = (e) => {
-    console.log({ path }, { pathIndex }, e.target.name)
     const { name } = e.target;
     if (name === 'more') {
       setPathIndex(index => index + 10)

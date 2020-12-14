@@ -49,7 +49,6 @@ export function booksReducers(state, action) {
         favouriteBooksList: action.payload
       };
     case 'ADD_FAVOURITE_BOOK':
-      console.log({ state }, { action })
       return {
         ...state,
         favouriteBooksList: [...state.favouriteBooksList, ...action.payload],
