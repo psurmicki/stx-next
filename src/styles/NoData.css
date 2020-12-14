@@ -1,11 +1,17 @@
-.noDataViewerCard {
-  width: 40vw;
-  height: 40vh;
+.NoData-Image {
+  min-width: 50vw;
+  min-height: 50vh;
 }
 
-.noDataText {
+.NoData-Text {
   padding: 16px 32px;
   text-align: center;
   margin: 4px 2px;
-  color: rgb(180, 19, 14);
+  color: rgb(245, 245, 245);
+}
+
+.NoData-Row{
+  align-items: stretch;
+  margin: 10px;
+  justify-content: center;
 }

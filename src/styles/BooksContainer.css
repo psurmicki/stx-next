@@ -1,25 +1,8 @@
-.BookContainer-Container {
-
-  /* width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%; */
-  /* margin-left: -50vw;
-  margin-right: -50vw; */
-  /* display: flex; 
-  flex-flow: row wrap; */
-  /* position: fixed; */
-  /* 
-  justify-content: space-around;
-  height: 30vh;
-  width: 50vw; */
-}
-
 .BookContainer-Row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .BookContainer-Column {
@@ -27,6 +10,11 @@
   flex-direction: column;
   flex-basis: 100%;
   flex: 1;
+  background-color: rgba(255,255,255,0.2);
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  justify-content: space-between;
 }
 
 .Pagination-Buttons {
@@ -34,4 +22,64 @@
   justify-content: space-around;
   box-sizing: border-box;
   margin: 5px;
+}
+
+.BookContainer-Header {
+  color: rgb(255, 255, 255);
+}
+
+
+ @media screen and (min-width: 320px) {
+  .BookContainer-Column-List {
+    overflow: auto;
+    height: 20vh;
+    min-width: 50vw;
+    display: flex;
+  }
+} 
+
+ @media screen and (min-width: 481px) {
+  .BookContainer-Column-List {
+    overflow: auto;
+    display: flex;
+    min-width: 50vh;
+    height: 28vh;
+  }
+}
+
+ @media screen and (min-width: 600px) {
+  .BookContainer-Column-List {
+    overflow: auto;
+    min-width: 40vw;
+    height: 50vh;
+    display: flex;
+  }
+}
+
+
+ @media screen and (min-width: 769px) {
+  .BookContainer-Column-List {
+    overflow: auto;
+    min-width: 45vw;
+    height: 55vh;
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .BookContainer-Column-List {
+    overflow: auto;
+    min-width: 45vw;
+    height: 65vh;
+    display: flex;
+  }
+} 
+
+@media screen and (min-width: 1201px) {
+  .BookContainer-Column-List {
+    overflow: auto;
+    min-width: 35vw;
+    height: 65vh;
+    display: flex;
+  }
 }

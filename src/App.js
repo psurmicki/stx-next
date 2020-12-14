@@ -3,7 +3,7 @@ import Header from './jsx/Header.jsx';
 import DataManageComponent from './jsx/DataManageComponent.jsx';
 import Store from './store.jsx';
 
-function App() {
+const App = () => {
   return (
     <Store>
       <div className="App App-backgroundImage">

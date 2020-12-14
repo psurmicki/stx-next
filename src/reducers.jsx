@@ -35,39 +35,35 @@ export function booksReducers(state, action) {
       return {
         ...state,
         booksList: [...state.booksList, ...action.payload],
-        favouriteBookSList: state.favouriteBookSList.filter(book => book.id !== action.payload[0].id)
+        favouriteBooksList: state.favouriteBooksList.filter(book => book.id !== action.payload[0].id)
       };
     case 'REORDER_BOOKS':
       return {
         ...state,
         booksList: action.payload
       };
-    case 'REMOVE_BOOKS':
-      return {
-        ...state,
-        booksList: state.booksList.filter(book => book.id !== action.payload.id)
-      };
     //Favourite books
     case 'SET_FAVOURITE_BOOK':
       return {
         ...state,
-        favouriteBookSList: action.payload
+        favouriteBooksList: action.payload
       };
     case 'ADD_FAVOURITE_BOOK':
+      console.log({ state }, { action })
       return {
         ...state,
-        favouriteBookSList: [...state.favouriteBookSList, ...action.payload],
+        favouriteBooksList: [...state.favouriteBooksList, ...action.payload],
         booksList: state.booksList.filter(book => book.id !== action.payload[0].id)
       };
     case 'REORDER_FAVOURITE_BOOK':
       return {
         ...state,
-        favouriteBookSList: action.payload
+        favouriteBooksList: action.payload
       };
     case 'REMOVE_FAVOURITE_BOOK':
       return {
         ...state,
-        favouriteBookSList: state.favouriteBookSList.filter(book => book.id !== action.payload.id)
+        favouriteBooksList: state.favouriteBooksList.filter(book => book.id !== action.payload.id)
       };
     case 'SET_ERROR':
       return {

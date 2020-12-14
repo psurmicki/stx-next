@@ -3,7 +3,7 @@ import { booksReducers } from './reducers.jsx';
 
 const initialState = {
   booksList: [],
-  favouriteBookSList: [],
+  favouriteBooksList: [],
   error: null
 };
 
@@ -17,4 +17,5 @@ const Store = ({ children }) => {
 };
 
 export const Context = createContext(initialState);
+
 export default Store;

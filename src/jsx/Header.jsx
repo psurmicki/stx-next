@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/Header.css';
 
-export default function Header() {
+const Header = () => {
   return (
     <header className='header'>
       <i className="fas fa-book fa-3x" />
@@ -9,3 +9,5 @@ export default function Header() {
     </header>
   )
 }
+
+export default Header;

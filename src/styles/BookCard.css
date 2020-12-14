@@ -1,51 +1,19 @@
 .BookCard-Container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.BookCard-Body {
-  flex: 1;
-  box-sizing: border-box;
-  background-color: rgba(255,255,255,0.2);
   border: 1px solid rgb(0, 0, 0);
   border-radius: 5px;
-}
-/* 
-.BookCardImage-Container {
-  flex: 1;
-} */
-
-.BookCard-Image {
-  flex: 1
-
-}
-
-.BookCard-Content {
-  
-}
-
-.BookCard-Title {
-
-}
-
-
-
-  /* flex-grow: 1;
+  margin: 5px;
   padding: 5px;
-  margin-top: 10px;
-  width: 20vw;
-  height:20vh; */
+  background-color: rgba(255,255,255,0.5);
+  font-size: 17;
+}
 
-  /* 
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: stretch;
+.BookCard-Row {
+  display: flex;
+  flex-wrap: wrap;
+  color:rgb(0, 0, 0);
+}
 
-  padding: 10px; */
-
-    /* max-width: 100%;
-  min-height: 100%; */
-  /* width: auto;
-  height: auto;
-  object-fit: cover; */
-  /* object-position: 50% 50%; */
+.BookCard-Header {
+  flex: 1;
+  margin-left: 5px;
+}

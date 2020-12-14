@@ -1,29 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Button, Row } from 'reactstrap';
 import noData from '../images/noData.png';
-import { Button } from 'reactstrap';
-// import { refreshPage } from '../utils/functions.jsx'
+import BookFormModal from './BookFormModal.jsx';
 import '../styles/NoData.css';
 
-export default function NoData() {
+const NoData = ({ onSubmit }) => {
+  const [modalIsOpen, setModalOpen] = useState(false);
+
   return (
     <div>
-      <img
-        className="noDataViewerCard"
-        src={noData}
-        alt="no data in DB"
-      />
-      <h2 className='noDataText'>
-        Please, choose another factors
-      </h2>
-      <Button
-        outline
-        color="danger"
-        size="xl"
-        className='button'
-      // onClick={refreshPage}
-      >
-        Refresh Page
-      </Button>
+      <Row>
+        <img
+          className="NoData-Image"
+          src={noData}
+          alt="no data in DB"
+        />
+      </Row>
+      <Row noGutters className='NoData-Row'>
+        <h2 className='NoData-Text'>
+          {'Please, choose another factors...'}
+        </h2>
+        <Button
+          id='NoData-Button-NewSearch'
+          size="xl"
+          name='more'
+          color="danger"
+          onClick={() => setModalOpen((prevValue) => !prevValue)}
+        >
+          <i className="fas fa-search" />{' '}
+          {' New Search'}
+        </Button>
+
+      </Row>
+      {modalIsOpen &&
+        <BookFormModal
+          modalIsOpen={modalIsOpen}
+          setModalOpen={setModalOpen}
+          onSubmit={onSubmit}
+        />
+      }
     </div>
   )
 }
+
+export default NoData;

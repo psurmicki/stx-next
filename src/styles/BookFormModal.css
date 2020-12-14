@@ -1,0 +1,15 @@
+.modal-body {
+  background-color: rgb(162, 162, 162);
+}
+
+.modal-header {
+  background-color: rgb(0, 0, 0);
+}
+
+.modal-title {
+  color:rgb(248, 248, 248)
+}
+
+button.close {
+  color: rgb(255, 255, 255);
+}

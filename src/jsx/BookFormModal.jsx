@@ -1,44 +1,32 @@
-import React, { useState } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import React from 'react';
+import { Modal, ModalHeader, ModalBody } from 'reactstrap';
 import FindBookForm from './FindBookForm.jsx';
+import '../styles/BookFormModal.css';
 
-export default function BookFormModal({ modalIsOpen, onSubmit, setModalOpen }) {
-  // const {
-  //   buttonLabel,
-  //   className
-  // } = props;
-
+const BookFormModal = ({ modalIsOpen, onSubmit, setModalOpen }) => {
   const toggle = () => setModalOpen(!modalIsOpen);
 
   const closeBtn = <button className="close" onClick={toggle}>&times;</button>;
 
   return (
     <div>
-      <Button
-        color="danger"
-        onClick={toggle}
-      >
-        {/* buttonLabel */}
-      </Button>
       <Modal
         isOpen={modalIsOpen}
         toggle={toggle}
-      // className={/* className */}
       >
         <ModalHeader
           toggle={toggle}
           close={closeBtn}
+          className='modal-header'
         >
-          {'Modal title'}
+          {'Find book'}
         </ModalHeader>
-        <ModalBody>
+        <ModalBody className='modal-body'>
           <FindBookForm onSubmit={onSubmit} />
         </ModalBody>
-        <ModalFooter>
-          <Button color="primary" onClick={toggle}></Button>{' '}
-          <Button color="secondary" onClick={toggle}>{'Cancel'}</Button>
-        </ModalFooter>
       </Modal>
     </div>
   );
 }
+
+export default BookFormModal;

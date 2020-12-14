@@ -1,50 +1,55 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
 import { Button } from 'reactstrap';
-import DatePicker from './DatePicker.jsx';
 import LanguageSelect from './LanguageSelect.jsx';
 import '../styles/FindBookForm.css';
 
-export default function FindBookForm({ onSubmit }) {
-
+const FindBookForm = ({ onSubmit }) => {
   const { register, handleSubmit, control } = useForm();
 
   return (
     <div className='BookForm-Container'>
       <h3 className='BookForm-Header'>
-        {'Provide values & find books!'}
+        {'Provide factors & find books!'}
       </h3>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form
+        id='FindBookForm-Form'
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <div>
           <label htmlFor="bookTitle">Book Title</label>
           <input
+            id='FindBookForm-Input-BookTitle'
             name="bookTitle"
-            placeholder="Enter a book title"
+            placeholder="Enter a book title..."
             ref={register}
           />
         </div>
         <div>
           <label htmlFor="subject">Subject</label>
           <input
+            id='FindBookForm-Input-Subject'
             name="subject"
-            placeholder="Enter subject"
+            placeholder="Enter subject..."
             ref={register}
           />
         </div>
         <div>
           <label htmlFor="authorName">Author Name</label>
           <input
+            id='FindBookForm-Input-AuthorName'
             name="authorName"
-            placeholder="Enter author name"
+            placeholder="Enter author name..."
             ref={register}
           />
         </div>
         <LanguageSelect control={control} />
-        <DatePicker control={control} />
         <div className='BookForm-Footer'>
           <Button
+            id='FindBookForm-Submit-Button'
             color="success"
           >
+            <i className="fas fa-search" />{' '}
             {'Search'}
           </Button>
         </div>
@@ -52,3 +57,5 @@ export default function FindBookForm({ onSubmit }) {
     </div>
   );
 }
+
+export default FindBookForm;

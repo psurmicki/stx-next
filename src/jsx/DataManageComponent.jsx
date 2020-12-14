@@ -1,21 +1,20 @@
 /* eslint-disable default-case */
-import React, { useState/* , useEffect */ } from 'react';
+import React, { useState } from 'react';
 import { useData } from '../utils/useData.jsx';
 import FindBookForm from './FindBookForm.jsx';
 import BookContiner from './BookContainer.jsx';
-// import BookFormModal from './BookFormModal.jsx';
-// import NoData from './NoData.jsx';
+import NoData from './NoData.jsx';
+import { isEqual } from 'lodash';
 import '../styles/loader.css';
 
-export default function DataManageComponent() {
+const DataManageComponent = () => {
   const [path, setPath] = useState('');
+  const [params, setParams] = useState(null)
   const [pathIndex, setPathIndex] = useState(0);
-  // const [modalIsOpen, setModalOpen] = useState(false)
   const { data, isLoading } = useData(path, pathIndex);
-  const [isActive, setIsActive] = useState(false);
 
   const handlePath = (fetchParams) => {
-    const { authorName, subject, bookTitle, language/*, publishedDate*/ } = fetchParams;
+    const { authorName, subject, bookTitle, language } = fetchParams;
     let newPath = []
 
     for (let param in fetchParams) {
@@ -36,8 +35,11 @@ export default function DataManageComponent() {
         }
       }
     }
+    if (!isEqual(fetchParams, params)) {
+      setPathIndex(0)
+    }
+    setParams(fetchParams);
     setPath(newPath.join('+'))
-    setIsActive((prevValue) => !prevValue);
   };
 
   const handelPathIndex = (e) => {
@@ -45,45 +47,32 @@ export default function DataManageComponent() {
     const { name } = e.target;
     if (name === 'more') {
       setPathIndex(index => index + 10)
-    } else {
+    } else if (name === 'back') {
       setPathIndex(index => index - 10)
     }
-
   }
 
-  if (!isActive) {
-    return <FindBookForm onSubmit={handlePath} />
+  if (!data && !isLoading) {
+    return (
+      <FindBookForm
+        onSubmit={handlePath}
+      />)
   } else
     return (
       <div>
         {isLoading ?
           <div className='loader' /> :
-          data &&
-          <BookContiner
-            books={data.items}
-            onSubmit={handlePath}
-            pathIndex={pathIndex}
-            handelPathIndex={handelPathIndex} />
+          data.items ?
+            <BookContiner
+              books={data.items}
+              onSubmit={handlePath}
+              pathIndex={pathIndex}
+              handelPathIndex={handelPathIndex} />
+            :
+            <NoData onSubmit={handlePath} />
         }
       </div>
     )
 }
 
-          // :
-          // <FindBookForm onSubmit={handlePath} />
-          // :
-          // <NoData />
-
-
-// <Button
-//         type='submit'
-//         onClick={() => setModalOpen(!modalIsOpen)}
-//       />
-//       {
-//         modalIsOpen &&
-//         <BookFormModal
-//           modalIsOpen={modalIsOpen}
-//           setModalOpen={setModalOpen}
-//           onSubmit={onSubmit}
-//         />
-//       }
+export default DataManageComponent;
